@@ -1,5 +1,5 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=header"/>
-<h1 align="center"><img align="center" style="border-radius: 100%;" src="https://moodle.embarcatech.cepedi.org.br/pluginfile.php/1/theme_moove/logo/1733422525/Group%20658.png" width="300px;" alt=""><br>Animation BitDogLab</h1>
+<h1 align="center"><img align="center" style="border-radius: 100%;" src="https://moodle.embarcatech.cepedi.org.br/pluginfile.php/1/theme_moove/logo/1733422525/Group%20658.png" width="300px;" alt=""><br>Temporizador One Shot com BitDogLab</h1>
 
 <h3 align="center">
    Com o emprego da função add_alarm_in_ms(), presente na ferramenta Pico SDK, projete um sistema de temporização para o acionamento de LEDs, que atua a partir do clique em um botão (pushbutton).
@@ -56,17 +56,13 @@ Temporizador-One-Shot
     - demonstration.mp4
 
 - include/&emsp;&emsp;&emsp;&emsp;# includes do projeto
-  - buttons.h
   - led_red.h
-  - songs.h
 
 - lib/&emsp;&emsp;&emsp;&emsp;# bibliotecas do projeto
   - ws2812.pio
     
 - src/&emsp;&emsp;&emsp;&emsp;# códigos do projeto
-  - buttons.c
   - led_red.c
-  - songs.c
 
 - .gitattributes
 
@@ -91,28 +87,14 @@ Temporizador-One-Shot
 
 ## ⚙️ Funcionalidades
 - Teclas Funcionais:
-  - 1) Caso o usuário clique no botão (pushbutton), os três LEDs serão
-ligados (todos em nível alto). A partir da primeira rotina de
-atraso, ocorrerá uma mudança de estado para dois LEDs
-ligados e, em seguida, apenas um. Obs.: veja o vídeo associado
-a esta prática no link presente na Figura 3.
-  - 2) O temporizador do alarme deve ser ajustado para um atraso de
-3 segundos (3.000ms), entre os estados de acionamento dos
-LEDs.
-  - 3) A mudança de estado dos LEDs deve ser implementa em
-funções de call-back do temporizador, a exemplo da rotina
-trabalhada na aula síncrona - turn_off_callback().
+  - 1) Caso o usuário clique no botão (pushbutton), os três LEDs serão ligados (todos em nível alto). A partir da primeira rotina de atraso, ocorrerá uma mudança de estado para dois LEDs
+ligados e, em seguida, apenas um. Obs.: veja o vídeo associado a esta prática no link presente na Figura 3.
+  - 2) O temporizador do alarme deve ser ajustado para um atraso de 3 segundos (3.000ms), entre os estados de acionamento dos LEDs.
+  - 3) A mudança de estado dos LEDs deve ser implementa em funções de call-back do temporizador, a exemplo da rotina trabalhada na aula síncrona - turn_off_callback().
 
-  - 4) O botão só pode alterar o estado dos LEDs quando o último LED
-for desligado. Deste modo, durante a execução das rotinas de
-temporização, o botão não pode iniciar uma nova chamada da
-função call-back.
-  - 5) Com o emprego da Ferramenta Educacional BitDogLab, faça
-um experimento com o código deste exercício utilizando o LED
-RGB – GPIOs 11, 12 e 13 e o Botão A, GPIO 05.
-  - 6) Implementar uma rotina em software para atenuação
-do efeito bouncing no botão (software debounce).
-
+  - 4) O botão só pode alterar o estado dos LEDs quando o último LED for desligado. Deste modo, durante a execução das rotinas de temporização, o botão não pode iniciar uma nova chamada da função call-back.
+  - 5) Com o emprego da Ferramenta Educacional BitDogLab, faça um experimento com o código deste exercício utilizando o LED RGB – GPIOs 11, 12 e 13 e o Botão A, GPIO 05.
+  - 6) Implementar uma rotina em software para atenuação do efeito bouncing no botão (software debounce).
 
 ---
 
@@ -149,7 +131,7 @@ $ git clone https://github.com/ferreiramateusalencar/Temporizador-One-Shot.git
 #### Wokwi Web
 - Entre no navegador e digite [Wokwi.com]()
 - Faça Upload dos Arquivos <i>diagram.json</i>
-- Faça upload do aquivo Temporizador-One-Shot <i>Temporizador-One-Shot.c</i> e da pasta <i>src/</i>
+- Faça upload do aquivo Temporizador-One-Shot <i>main.c</i> e da pasta <i>src/</i>
 
 #### Extensão Wokwi
 - Abra o Visual Studio
@@ -159,7 +141,7 @@ $ git clone https://github.com/ferreiramateusalencar/Temporizador-One-Shot.git
 ```
 [wokwi]
 version = 1
-firmware = 'build/mainm.hex'
+firmware = 'build/main.hex'
 elf = 'build/main.elf'
 ```
 - Abra o arquivo <i>diagram.json</i>
